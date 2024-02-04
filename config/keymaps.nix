@@ -58,7 +58,7 @@
       action = ''[["_dP]]'';
     }
     {
-      mode = ["n" "v"];
+      mode = [ "n" "v" ];
       key = "<leader>y";
       action = ''[["+y]]'';
     }
@@ -68,7 +68,7 @@
       action = ''[["+Y]]'';
     }
     {
-      mode = ["n" "v"];
+      mode = [ "n" "v" ];
       key = "<leader>d";
       action = ''[["_d]]'';
     }
@@ -110,7 +110,7 @@
     {
       mode = "n";
       key = "<leader>s";
-      action = ''[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]'';
+      action = "[[:%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>]]";
     }
   ];
 }

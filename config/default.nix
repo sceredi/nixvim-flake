@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+    ./cmp.nix
     ./comment.nix
     ./gitsigns.nix
     ./harpoon.nix

@@ -5,6 +5,7 @@
     ./harpoon.nix
     ./keymaps.nix
     ./lualine.nix
+    ./lsp.nix
     ./none-ls.nix
     ./set.nix
     ./sleuth.nix
@@ -18,4 +19,5 @@
     enable = true;
     transparentBackground = true;
   };
+
 }

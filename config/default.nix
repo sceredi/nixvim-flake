@@ -11,6 +11,7 @@
     ./sleuth.nix
     ./telescope.nix
     ./treesitter.nix
+    ./undotree.nix
   ];
 
   viAlias = true;

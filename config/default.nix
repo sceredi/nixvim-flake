@@ -2,6 +2,7 @@
   imports = [
     ./comment.nix
     ./gitsigns.nix
+    ./harpoon.nix
     ./keymaps.nix
     ./lualine.nix
     ./set.nix

@@ -9,6 +9,7 @@
     ./none-ls.nix
     ./set.nix
     ./sleuth.nix
+    ./telescope.nix
     ./treesitter.nix
   ];
 

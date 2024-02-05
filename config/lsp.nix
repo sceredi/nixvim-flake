@@ -11,6 +11,9 @@
       "gt" = "type_definition";
       "gI" = "implementation";
       "K" = "hover";
+
+      "<leader>rn" = "rename";
+      "<leader>ca" = "code_action";
     };
   };
   plugins.rust-tools.enable = true;

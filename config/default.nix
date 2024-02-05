@@ -5,6 +5,7 @@
     ./harpoon.nix
     ./keymaps.nix
     ./lualine.nix
+    ./none-ls.nix
     ./set.nix
     ./sleuth.nix
     ./treesitter.nix

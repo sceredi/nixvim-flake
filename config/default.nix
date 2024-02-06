@@ -2,6 +2,7 @@
   imports = [
     ./cmp.nix
     ./comment.nix
+    ./copilot.nix
     ./gitsigns.nix
     ./harpoon.nix
     ./keymaps.nix
@@ -18,9 +19,8 @@
   viAlias = true;
   vimAlias = true;
 
-  colorschemes.rose-pine = {
+  colorschemes.kanagawa = {
     enable = true;
-    transparentBackground = true;
   };
 
 }

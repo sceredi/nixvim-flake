@@ -61,21 +61,25 @@
       mode = "x";
       key = "<leader>p";
       action = ''[["_dP]]'';
+      lua = true;
     }
     {
       mode = [ "n" "v" ];
       key = "<leader>y";
       action = ''[["+y]]'';
+      lua = true;
     }
     {
       mode = "n";
       key = "<leader>Y";
       action = ''[["+Y]]'';
+      lua = true;
     }
     {
       mode = [ "n" "v" ];
       key = "<leader>d";
       action = ''[["_d]]'';
+      lua = true;
     }
     {
       mode = "i";

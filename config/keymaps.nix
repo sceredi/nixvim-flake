@@ -2,6 +2,11 @@
   globals.mapleader = " ";
   keymaps = [
     {
+      mode = [ "n" "v" ];
+      key = "<space>";
+      action = "<nop>";
+    }
+    {
       mode = "n";
       key = "<leader>pf";
       action = "<cmd>Ex<CR>";
@@ -111,6 +116,26 @@
       mode = "n";
       key = "<leader>s";
       action = "[[:%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>]]";
+    }
+    {
+      mode = "n";
+      key = "]d";
+      action = "<cmd>lua vim.diagnostic.goto_next()<CR>";
+    }
+    {
+      mode = "n";
+      key = "[d";
+      action = "<cmd>lua vim.diagnostic.goto_prev()<CR>";
+    }
+    {
+      mode = "n";
+      key = "<leader>e";
+      action = "<cmd>lua vim.diagnostic.open_float()<CR>";
+    }
+    {
+      mode = "n";
+      key = "<leader>q";
+      action = "<cmd>lua vim.diagnostic.setloclist()<CR>";
     }
   ];
 }

@@ -4,7 +4,6 @@
       enable = true;
       nixGrammars = true;
       indent = true;
-      folding = true;
       ensureInstalled = [
         "bash"
         "c"

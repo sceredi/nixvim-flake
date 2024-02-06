@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+    ./autocmd.nix
     ./cmp.nix
     ./comment.nix
     ./copilot.nix
@@ -14,6 +15,7 @@
     ./telescope.nix
     ./treesitter.nix
     ./undotree.nix
+    ./which-key.nix
   ];
 
   viAlias = true;

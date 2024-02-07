@@ -1,10 +1,11 @@
-{ plugins = {
-  copilot-lua = {
-    enable = true; 
-    suggestion = {
-      autoTrigger = true;
+{
+  plugins = {
+    copilot-lua = {
+      enable = true;
+      suggestion = {
+        autoTrigger = true;
+      };
     };
   };
-};
 
 }

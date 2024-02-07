@@ -22,8 +22,5 @@
   viAlias = true;
   vimAlias = true;
 
-  colorschemes.rose-pine = {
-    enable = true;
-  };
-
+  colorschemes.rose-pine = { enable = true; };
 }

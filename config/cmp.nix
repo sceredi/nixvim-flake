@@ -1,5 +1,5 @@
 {
-  options.completeopt = ["menu" "menuone" "noselect"];
+  options.completeopt = [ "menu" "menuone" "noselect" ];
 
   config.plugins = {
     luasnip.enable = true;
@@ -67,9 +67,9 @@
       };
 
       sources = [
-        {name = "path";}
-        {name = "nvim_lsp";}
-        {name = "luasnip";}
+        { name = "path"; }
+        { name = "nvim_lsp"; }
+        { name = "luasnip"; }
         {
           name = "buffer";
           # Words from other open buffers can also be suggested.

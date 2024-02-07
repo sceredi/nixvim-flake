@@ -30,6 +30,10 @@
         action = "lsp_dynamic_workspace_symbols";
         desc = "Telescope LSP Dynamic Workspace Symbols";
       };
+      "<leader>/" = {
+        action = "current_buffer_fuzzy_find";
+        desc = "Telescope Fuzzy Find in Current Buffer";
+      };
       "<leader>?" = {
         action = "oldfiles";
         desc = "Telescope Find Recently Opened Files";

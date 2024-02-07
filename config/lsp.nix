@@ -4,6 +4,7 @@
     servers = {
       gopls.enable = true;
       nixd.enable = true;
+      pyright.enable = true;
     };
     keymaps.lspBuf = {
       "gD" = "declaration";

@@ -6,6 +6,7 @@
     ./copilot.nix
     ./gitsigns.nix
     ./harpoon.nix
+    ./indent-blankline.nix
     ./keymaps.nix
     ./lualine.nix
     ./lsp.nix
@@ -21,7 +22,7 @@
   viAlias = true;
   vimAlias = true;
 
-  colorschemes.kanagawa = {
+  colorschemes.rose-pine = {
     enable = true;
   };
 

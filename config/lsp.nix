@@ -16,7 +16,7 @@
       # nix
       nixd.enable = true;
       # python
-      pyright.enable = true;
+      pylsp.enable = true;
       # typescript/javascript
       tsserver = {
         enable = false;
@@ -34,6 +34,8 @@
       html.enable = true;
       # json
       jsonls.enable = true;
+      # scala
+      metals.enable = true;
     };
     keymaps.lspBuf = {
       "gD" = "declaration";

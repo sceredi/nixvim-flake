@@ -8,7 +8,7 @@
         # go
         golangci_lint.enable = true;
         # python
-        flake8.enable = true;
+        # flake8.enable = true;
         # lua
         luacheck.enable = true;
         # kotlin

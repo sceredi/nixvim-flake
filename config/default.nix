@@ -22,5 +22,8 @@
   viAlias = true;
   vimAlias = true;
 
-  colorschemes.rose-pine = { enable = true; };
+  colorschemes.base16 = {
+    enable = true;
+    colorscheme = "gruvbox-material-dark-hard";
+  };
 }

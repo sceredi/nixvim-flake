@@ -16,7 +16,7 @@
       # nix
       nixd.enable = true;
       # python
-      pylsp.enable = true;
+      pyright = { enable = true; };
       # typescript/javascript
       tsserver = {
         enable = false;

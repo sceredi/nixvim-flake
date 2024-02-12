@@ -9,6 +9,7 @@
     ./indent-blankline.nix
     ./keymaps.nix
     ./lualine.nix
+    ./markdown-preview.nix
     ./lsp.nix
     ./none-ls.nix
     ./set.nix

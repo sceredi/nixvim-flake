@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   plugins = {
     lsp = {
       enable = true;
@@ -35,6 +35,8 @@
         html.enable = true;
         # json
         jsonls.enable = true;
+        # kotlin
+        kotlin-language-server.enable = true;
         # scala
         metals.enable = true;
       };
@@ -50,9 +52,7 @@
     nvim-jdtls = {
       enable = true;
       data = "~/.cache/jdtls/workspace";
-      cmd = [
-        "${pkgs.jdt-language-server}/bin/jdt-language-server"
-      ];
+      cmd = [ "${pkgs.jdt-language-server}/bin/jdt-language-server" ];
     };
   };
 }

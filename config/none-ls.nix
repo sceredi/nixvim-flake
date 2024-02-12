@@ -23,6 +23,8 @@
         gofumpt.enable = true;
         # python
         black.enable = true;
+        # java
+        google_java_format.enable = true;
         # json
         jq.enable = true;
         # lua

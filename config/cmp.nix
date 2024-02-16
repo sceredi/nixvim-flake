@@ -10,6 +10,7 @@
       cmp = {
         enable = true;
         menu = {
+          copilot = "[GHC]";
           nvim_lsp = "[LSP]";
           nvim_lua = "[api]";
           path = "[path]";
@@ -27,11 +28,12 @@
         "<C-p>" = "cmp.mapping.select_prev_item()";
         "<C-b>" = "cmp.mapping.scroll_docs(-4)";
         "<C-f>" = "cmp.mapping.scroll_docs(4)";
-        "<C-Space>" = "cmp.mapping.complete()";
-        "<CR>" = "cmp.mapping.confirm{
-          behavior = cmp.ConfirmBehavior.Replace,
-          select = true,
-        }";
+        "<C-Space>" = "cmp.mapping.complete({ reason = cmp.ContextReason.Auto })";
+        "<CR>" = ''
+          cmp.mapping.confirm{
+                    behavior = cmp.ConfirmBehavior.Replace,
+                    select = true,
+                  }'';
         "<Tab>" = {
           modes = [ "i" "s" ];
           action =
@@ -67,6 +69,10 @@
       };
 
       sources = [
+        {
+          name = "copilot";
+          priority = 1000;
+        }
         { name = "path"; }
         { name = "nvim_lsp"; }
         { name = "luasnip"; }

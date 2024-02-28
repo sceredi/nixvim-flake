@@ -39,6 +39,8 @@
         kotlin-language-server.enable = true;
         # scala
         metals.enable = true;
+        # xml
+        lemminx.enable = true;
       };
       keymaps.lspBuf = {
         "gD" = "declaration";

@@ -153,29 +153,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1708807242,
-        "narHash": "sha256-sRTRkhMD4delO/hPxxi+XwLqPn8BuUq6nnj4JqLwOu0=",
-        "path": "/nix/store/gzv0nsm8d5js3wzq2mr1sv9lfp1iyail-source",
-        "rev": "73de017ef2d18a04ac4bfd0c02650007ccb31c2a",
-        "type": "path"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1708984720,
-        "narHash": "sha256-gJctErLbXx4QZBBbGp78PxtOOzsDaQ+yw1ylNQBuSUY=",
-        "owner": "NixOS",
+        "lastModified": 1709230475,
+        "narHash": "sha256-QI/0GiTvWxhBJ/bpredarfAUARnP6zE1vCOifsZ220A=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "13aff9b34cc32e59d35c62ac9356e4a41198a538",
+        "rev": "b5f6e3881acf8ca8a35b8cdb8d4021e5bd469a4e",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
+        "owner": "nixos",
+        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -186,15 +173,17 @@
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1709118025,
-        "narHash": "sha256-IwzgIAKHJI+qcno0pExTOfhqKgHzA5vc++gfgJ0ZCok=",
+        "lastModified": 1709277403,
+        "narHash": "sha256-xEpCiFOeu9Th0NUPUbsBncDKnXQd+A4XZd6r/FJ6dQw=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "8bb460e261dd0fd8ac3f544f8a2a28ad64616cbe",
+        "rev": "8c0bdb17e980b2ca64860e309ce601dd92ce0c51",
         "type": "github"
       },
       "original": {

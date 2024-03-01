@@ -20,5 +20,8 @@ pkgs.mkShell {
 
     # Kotlin
     kotlin-native
+
+    # Java
+    jdt-language-server
   ];
 }

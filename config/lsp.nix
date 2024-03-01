@@ -41,6 +41,21 @@
         metals.enable = true;
         # xml
         lemminx.enable = true;
+        # rust
+        rust-analyzer = {
+          enable = true;
+          installCargo = true;
+          installRustc = true;
+          settings = {
+            checkOnSave = true;
+            check = {
+              command = "clippy";
+            };
+            procMacro = {
+              enable = true;
+            };
+          };
+        };
       };
       keymaps.lspBuf = {
         "gD" = "declaration";
@@ -54,7 +69,8 @@
     nvim-jdtls = {
       enable = true;
       data = "~/.cache/jdtls/workspace";
-      cmd = [ "${pkgs.jdt-language-server}/bin/jdt-language-server" ];
+      configuration = "~/.cache/jdtls/configurations";
+      cmd = [ "${pkgs.jdt-language-server}/bin/jdtls" ];
     };
   };
 }

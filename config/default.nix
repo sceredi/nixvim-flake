@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ ... }: {
   imports = [
     ./keymaps.nix
     ./auto.nix
@@ -8,7 +8,9 @@
     ./plugins/lsp.nix
     ./plugins/mini.nix
     ./plugins/sleuth.nix
+    ./plugins/telescope.nix
     ./plugins/todo-comments.nix
+    ./plugins/treesitter.nix
   ];
 
   vimAlias = true;
@@ -91,11 +93,7 @@
     hlsearch = true;
   };
 
-  extraPlugins = with pkgs.vimPlugins;
-    [
-      # Useful for getting pretty icons, but requires a Nerd Font.
-      nvim-web-devicons # TODO: Figure out how to configure using this with telescope
-    ];
+  plugins.web-devicons.enable = true;
 
   # TODO: Figure out where to move this
   # https://nix-community.github.io/nixvim/NeovimOptions/index.html?highlight=extraplugins#extraconfigluapre

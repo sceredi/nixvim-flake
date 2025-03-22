@@ -5,6 +5,7 @@
     ./plugins/cmp.nix
     ./plugins/conform.nix
     ./plugins/copilot.nix
+    ./plugins/harpoon.nix
     ./plugins/gitsigns.nix
     ./plugins/lsp.nix
     ./plugins/mini.nix

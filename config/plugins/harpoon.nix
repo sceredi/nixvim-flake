@@ -1,6 +1,8 @@
 {
   plugins.harpoon = {
     enable = true;
+    saveOnChange = true;
+    saveOnToggle = true;
 
     keymapsSilent = true;
 

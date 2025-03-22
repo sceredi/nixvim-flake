@@ -111,12 +111,12 @@
     }
     {
       mode = "n";
-      key = "<C-k>";
+      key = "<C-j>";
       action = "<cmd>cnext<CR>zz";
     }
     {
       mode = "n";
-      key = "<C-j>";
+      key = "<C-k>";
       action = "<cmd>cprev<CR>zz";
     }
     {

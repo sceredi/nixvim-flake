@@ -13,6 +13,7 @@
     ./plugins/telescope.nix
     ./plugins/todo-comments.nix
     ./plugins/treesitter.nix
+    ./plugins/trouble.nix
     ./plugins/undotree.nix
     ./plugins/which-key.nix
   ];

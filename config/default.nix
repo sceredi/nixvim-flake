@@ -1,6 +1,7 @@
 {
   imports = [
     ./keymaps.nix
+    ./auto.nix
     # ./plugins/autocmd.nix
     # ./plugins/cmp.nix
     # ./plugins/comment.nix

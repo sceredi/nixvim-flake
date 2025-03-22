@@ -11,6 +11,7 @@
     ./plugins/telescope.nix
     ./plugins/todo-comments.nix
     ./plugins/treesitter.nix
+    ./plugins/which-key.nix
   ];
 
   vimAlias = true;

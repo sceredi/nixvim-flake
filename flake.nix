@@ -2,39 +2,39 @@
   description = "My nixvim configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
-    flake-utils.url = "github:numtide/flake-utils";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = { self, nixpkgs, nixvim, flake-utils, ... }@inputs:
-    let config = import ./config; # import the module directly
-    in flake-utils.lib.eachDefaultSystem (system:
-      let
-        nixvimLib = nixvim.lib.${system};
-        pkgs = import nixpkgs { inherit system; };
-        nixvim' = nixvim.legacyPackages.${system};
-        nvim = nixvim'.makeNixvimWithModule {
-          inherit pkgs;
-          module = config;
-        };
-      in
-      {
-        formatter = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+  outputs = { nixvim, flake-parts, ... }@inputs:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems =
+        [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
 
-        checks = {
-          default = nixvimLib.check.mkTestDerivationFromNvim {
-            inherit nvim;
-            name = "My nixvim configuration";
+      perSystem = { pkgs, system, ... }:
+        let
+          nixvimLib = nixvim.lib.${system};
+          nixvim' = nixvim.legacyPackages.${system};
+          nixvimModule = {
+            inherit pkgs;
+            module = import ./config;
+            extraSpecialArgs = { };
           };
-        };
+          nvim = nixvim'.makeNixvimWithModule nixvimModule;
+        in {
+          checks = {
+            default =
+              nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
+          };
 
-        packages = {
-          # Lets you run `nix run .` to start nixvim
-          default = nvim;
-        };
+          formatter = pkgs.alejandra;
 
-        devShells.default = import ./shell.nix { inherit pkgs; };
-      });
+          packages = { default = nvim; };
+          devShells.default = import ./shell.nix { inherit pkgs; };
+        };
+    };
 }

@@ -1,26 +1,25 @@
 { pkgs, ... }: {
   imports = [
-    ./autocmd.nix
-    ./cmp.nix
-    ./comment.nix
-    ./copilot.nix
-    ./gitsigns.nix
-    ./harpoon.nix
-    ./indent-blankline.nix
-    ./keymaps.nix
-    ./lualine.nix
-    ./markdown-preview.nix
-    ./lsp.nix
-    ./none-ls.nix
-    ./set.nix
-    ./sleuth.nix
-    ./telescope.nix
-    ./treesitter.nix
-    ./undotree.nix
-    ./which-key.nix
+    ./plugins/autocmd.nix
+    ./plugins/cmp.nix
+    ./plugins/comment.nix
+    ./plugins/copilot.nix
+    ./plugins/gitsigns.nix
+    ./plugins/harpoon.nix
+    ./plugins/indent-blankline.nix
+    ./plugins/keymaps.nix
+    ./plugins/lualine.nix
+    ./plugins/markdown-preview.nix
+    ./plugins/lsp.nix
+    ./plugins/none-ls.nix
+    ./plugins/set.nix
+    ./plugins/sleuth.nix
+    ./plugins/telescope.nix
+    ./plugins/treesitter.nix
+    ./plugins/undotree.nix
+    ./plugins/which-key.nix
   ];
 
-  viAlias = true;
   vimAlias = true;
 
   colorschemes.base16 = {

@@ -3,6 +3,7 @@
     ./keymaps.nix
     ./auto.nix
     ./plugins/conform.nix
+    ./plugins/gitsigns.nix
     ./plugins/sleuth.nix
     ./plugins/todo-comments.nix
   ];

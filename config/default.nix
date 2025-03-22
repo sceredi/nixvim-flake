@@ -5,10 +5,14 @@
     ./plugins/cmp.nix
     ./plugins/conform.nix
     ./plugins/copilot.nix
+    ./plugins/dap.nix
     ./plugins/harpoon.nix
     ./plugins/gitsigns.nix
+    ./plugins/lint.nix
     ./plugins/lsp.nix
+    ./plugins/markdown-preview.nix
     ./plugins/mini.nix
+    ./plugins/oil.nix
     ./plugins/sleuth.nix
     ./plugins/telescope.nix
     ./plugins/todo-comments.nix

@@ -33,6 +33,7 @@ pkgs.mkShell {
 
     # python
     pyright
+    ruff
 
     # typescript
     nodePackages.typescript-language-server
@@ -46,5 +47,8 @@ pkgs.mkShell {
 
     # xml
     lemminx
+
+    # markdown
+    markdownlint-cli
   ];
 }

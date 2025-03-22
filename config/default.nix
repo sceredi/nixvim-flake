@@ -15,7 +15,8 @@
     # ./plugins/lsp.nix
     # ./plugins/none-ls.nix
     # ./plugins/set.nix
-    # ./plugins/sleuth.nix
+    ./plugins/sleuth.nix
+    ./plugins/todo-comments.nix
     # ./plugins/telescope.nix
     # ./plugins/treesitter.nix
     # ./plugins/undotree.nix

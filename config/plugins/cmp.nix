@@ -1,86 +1,79 @@
 {
-  options.completeopt = [ "menu" "menuone" "noselect" ];
+  plugins.luasnip = { enable = true; };
 
-  config.plugins = {
-    luasnip.enable = true;
+  plugins.cmp-nvim-lsp = { enable = true; };
 
-    lspkind = {
-      enable = true;
+  plugins.cmp-path = { enable = true; };
 
-      cmp = {
-        enable = true;
-        menu = {
-          copilot = "[GHC]";
-          nvim_lsp = "[LSP]";
-          nvim_lua = "[api]";
-          path = "[path]";
-          luasnip = "[snip]";
-          buffer = "[buffer]";
-        };
+  # `friendly-snippets` contains a variety of premade snippets
+  #    See the README about individual language/framework/plugin snippets:
+  #    https://github.com/rafamadriz/friendly-snippets
+  # https://nix-community.github.io/nixvim/plugins/friendly-snippets.html
+  # plugins.friendly-snippets = {
+  #   enable = true;
+  # };
+
+  extraLuaPackages = ps:
+    [
+      # Required by luasnip
+      ps.jsregexp
+    ];
+
+  plugins.cmp = {
+    enable = true;
+
+    settings = {
+      snippet = {
+        expand = ''
+          function(args)
+            require('luasnip').lsp_expand(args.body)
+          end
+        '';
       };
-    };
-    nvim-cmp = {
-      enable = true;
-      snippet.expand = "luasnip";
+
+      completion = { completeopt = "menu,menuone,noinsert"; };
 
       mapping = {
+        # Select the [n]ext item
         "<C-n>" = "cmp.mapping.select_next_item()";
+        # Select the [p]revious item
         "<C-p>" = "cmp.mapping.select_prev_item()";
+        # Scroll the documentation window [b]ack / [f]orward
         "<C-b>" = "cmp.mapping.scroll_docs(-4)";
         "<C-f>" = "cmp.mapping.scroll_docs(4)";
-        "<C-Space>" =
-          "cmp.mapping.complete({ reason = cmp.ContextReason.Auto })";
-        "<C-y>" = ''
-          cmp.mapping.confirm{
-                    select = true,
-                  }'';
-        "<Tab>" = {
-          modes = [ "i" "s" ];
-          action =
-            # lua
-            ''
-              function(fallback)
-                if cmp.visible() then
-                  cmp.select_next_item()
-                elseif require("luasnip").expand_or_jumpable() then
-                  vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
-                else
-                  fallback()
-                end
-              end
-            '';
-        };
-        "<S-Tab>" = {
-          modes = [ "i" "s" ];
-          action =
-            # lua
-            ''
-              function(fallback)
-                if cmp.visible() then
-                  cmp.select_prev_item()
-                elseif require("luasnip").jumpable(-1) then
-                  vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
-                else
-                  fallback()
-                end
-              end
-            '';
-        };
+        "<C-y>" = "cmp.mapping.confirm { select = true }";
+        "<C-Space>" = "cmp.mapping.complete {}";
+
+        "<C-l>" = ''
+          cmp.mapping(function()
+            if luasnip.expand_or_locally_jumpable() then
+              luasnip.expand_or_jump()
+            end
+          end, { 'i', 's' })
+        '';
+        "<C-h>" = ''
+          cmp.mapping(function()
+            if luasnip.locally_jumpable(-1) then
+              luasnip.jump(-1)
+            end
+          end, { 'i', 's' })
+        '';
+
       };
 
+      # WARNING: If plugins.cmp.autoEnableSources Nixivm will automatically enable the
+      # corresponding source plugins. This will work only when this option is set to a list.
+      # If you use a raw lua string, you will need to explicitly enable the relevant source
+      # plugins in your nixvim configuration.
       sources = [
         {
-          name = "copilot";
-          priority = 1000;
+          name = "luasnip";
         }
-        { name = "path"; }
+        # Adds other completion capabilites.
+        #  nvim-cmp does not ship with all sources by default. They are split
+        #  into multiple repos for maintenance purposes.
         { name = "nvim_lsp"; }
-        { name = "luasnip"; }
-        {
-          name = "buffer";
-          # Words from other open buffers can also be suggested.
-          option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-        }
+        { name = "path"; }
       ];
     };
   };

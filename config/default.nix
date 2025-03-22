@@ -2,6 +2,7 @@
   imports = [
     ./keymaps.nix
     ./auto.nix
+    ./plugins/cmp.nix
     ./plugins/conform.nix
     ./plugins/gitsigns.nix
     ./plugins/lsp.nix

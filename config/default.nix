@@ -4,6 +4,8 @@
     ./auto.nix
     ./plugins/conform.nix
     ./plugins/gitsigns.nix
+    ./plugins/lsp.nix
+    ./plugins/mini.nix
     ./plugins/sleuth.nix
     ./plugins/todo-comments.nix
   ];

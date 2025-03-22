@@ -154,5 +154,35 @@
       key = "<leader>q";
       action = "<cmd>lua vim.diagnostic.setloclist()<CR>";
     }
+    {
+      mode = "n";
+      key = "<leader>xq";
+      action = "<cmd>lua vim.diagnostic.setqflist()<CR>";
+      options.desc = "Set diagnostics to qflist";
+    }
+    {
+      mode = "n";
+      key = "<leader>rw";
+      action = ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>";
+      options.desc = "[R]eplace [W]ord under cursor";
+    }
+    {
+      mode = "n";
+      key = "<left>";
+      action = "<cmd>tabprev<CR>";
+      options.desc = "Go to previous tab";
+    }
+    {
+      mode = "n";
+      key = "<right>";
+      action = "<cmd>tabnext<CR>";
+      options.desc = "Go to next tab";
+    }
+    {
+      mode = "n";
+      key = "<leader>tt";
+      action = "<cmd>tabnew | term<CR>";
+      options.desc = "Open new tab";
+    }
   ];
 }

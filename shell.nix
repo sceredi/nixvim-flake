@@ -18,9 +18,6 @@ pkgs.mkShell {
     # Elixir
     elixir
 
-    # FSharp
-    dotnet-sdk
-
     # Go
     go
     gopls
@@ -49,6 +46,5 @@ pkgs.mkShell {
 
     # xml
     lemminx
-
   ];
 }

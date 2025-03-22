@@ -1,9 +1,10 @@
 { ... }: {
   imports = [
-    ./keymaps.nix
     ./auto.nix
+    ./keymaps.nix
     ./plugins/cmp.nix
     ./plugins/conform.nix
+    ./plugins/copilot.nix
     ./plugins/gitsigns.nix
     ./plugins/lsp.nix
     ./plugins/mini.nix
@@ -92,6 +93,18 @@
 
     # See `:help hlsearch`
     hlsearch = true;
+
+    expandtab = true;
+
+    wrap = false;
+
+    swapfile = false;
+    backup = false;
+
+    colorcolumn = "80";
+
+    # Set completeopt to have a better completion experience
+    completeopt = "menuone,noselect";
   };
 
   plugins.web-devicons.enable = true;

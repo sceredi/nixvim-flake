@@ -1,5 +1,6 @@
-{ pkgs, ... }: {
+{
   imports = [
+    ./keymaps.nix
     # ./plugins/autocmd.nix
     # ./plugins/cmp.nix
     # ./plugins/comment.nix

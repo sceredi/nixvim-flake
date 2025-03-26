@@ -1,5 +1,11 @@
 {
-  plugins.oil.enable = true;
+  plugins.oil = {
+    enable = true;
+    settings = {
+      keymaps = { "<C-h>" = false;
+        "<C-l>" = false; };
+    };
+  };
   keymaps = [
     {
       mode = "n";

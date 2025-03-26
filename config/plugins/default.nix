@@ -1,0 +1,24 @@
+{
+  imports = [
+    ./cmp.nix
+    ./conform.nix
+    ./copilot.nix
+    ./dap.nix
+    ./fugitive.nix
+    ./harpoon.nix
+    ./gitsigns.nix
+    ./lint.nix
+    ./lsp.nix
+    ./lz-n.nix
+    ./markdown-preview.nix
+    ./mini.nix
+    ./oil.nix
+    ./sleuth.nix
+    ./telescope.nix
+    ./todo-comments.nix
+    ./treesitter.nix
+    ./trouble.nix
+    ./undotree.nix
+    ./which-key.nix
+  ];
+}

@@ -1,26 +1,5 @@
 { ... }: {
-  imports = [
-    ./auto.nix
-    ./keymaps.nix
-    ./plugins/cmp.nix
-    ./plugins/conform.nix
-    ./plugins/copilot.nix
-    ./plugins/dap.nix
-    ./plugins/harpoon.nix
-    ./plugins/gitsigns.nix
-    ./plugins/lint.nix
-    ./plugins/lsp.nix
-    ./plugins/markdown-preview.nix
-    ./plugins/mini.nix
-    ./plugins/oil.nix
-    ./plugins/sleuth.nix
-    ./plugins/telescope.nix
-    ./plugins/todo-comments.nix
-    ./plugins/treesitter.nix
-    ./plugins/trouble.nix
-    ./plugins/undotree.nix
-    ./plugins/which-key.nix
-  ];
+  imports = [ ./auto.nix ./keymaps.nix ./plugins ./performance.nix ];
 
   vimAlias = true;
 

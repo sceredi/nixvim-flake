@@ -1,14 +1,9 @@
-{ pkgs, lib, ... }:
-{
+{ pkgs, lib, ... }: {
   plugins = {
 
-    cmp-nvim-lsp = {
-      enable = true;
-    };
+    cmp-nvim-lsp = { enable = true; };
 
-    fidget = {
-      enable = true;
-    };
+    fidget = { enable = true; };
 
     nvim-jdtls = {
       # JAVA LSP
@@ -26,6 +21,7 @@
 
         # c/c++
         clangd.enable = true;
+        cmake.enable = true;
 
         # go
         gopls.enable = true;
@@ -51,11 +47,7 @@
         lua_ls = {
           enable = true;
 
-          settings = {
-            completion = {
-              callSnippet = "Replace";
-            };
-          };
+          settings = { completion = { callSnippet = "Replace"; }; };
         };
 
         # nix
@@ -76,6 +68,12 @@
 
         # xml
         lemminx.enable = true;
+
+        # zig
+        zls.enable = true;
+
+        # gleam
+        gleam.enable = true;
       };
 
       keymaps = {
@@ -96,18 +94,14 @@
             mode = "n";
             key = "gd";
             action.__raw = "require('telescope.builtin').lsp_definitions";
-            options = {
-              desc = "LSP: [G]oto [D]efinition";
-            };
+            options = { desc = "LSP: [G]oto [D]efinition"; };
           }
           # Find references for the word under your cursor.
           {
             mode = "n";
             key = "gr";
             action.__raw = "require('telescope.builtin').lsp_references";
-            options = {
-              desc = "LSP: [G]oto [R]eferences";
-            };
+            options = { desc = "LSP: [G]oto [R]eferences"; };
           }
           # Jump to the implementation of the word under your cursor.
           #  Useful when your language has ways of declaring types without an actual implementation.
@@ -115,9 +109,7 @@
             mode = "n";
             key = "gI";
             action.__raw = "require('telescope.builtin').lsp_implementations";
-            options = {
-              desc = "LSP: [G]oto [I]mplementation";
-            };
+            options = { desc = "LSP: [G]oto [I]mplementation"; };
           }
           # Jump to the type of the word under your cursor.
           #  Useful when you're not sure what type a variable is and you want to see
@@ -126,9 +118,7 @@
             mode = "n";
             key = "<leader>D";
             action.__raw = "require('telescope.builtin').lsp_type_definitions";
-            options = {
-              desc = "LSP: Type [D]efinition";
-            };
+            options = { desc = "LSP: Type [D]efinition"; };
           }
           # Fuzzy find all the symbols in your current document.
           #  Symbols are things like variables, functions, types, etc.
@@ -136,19 +126,16 @@
             mode = "n";
             key = "<leader>ds";
             action.__raw = "require('telescope.builtin').lsp_document_symbols";
-            options = {
-              desc = "LSP: [D]ocument [S]ymbols";
-            };
+            options = { desc = "LSP: [D]ocument [S]ymbols"; };
           }
           # Fuzzy find all the symbols in your current workspace.
           #  Similar to document symbols, except searches over your entire project.
           {
             mode = "n";
             key = "<leader>ws";
-            action.__raw = "require('telescope.builtin').lsp_dynamic_workspace_symbols";
-            options = {
-              desc = "LSP: [W]orkspace [S]ymbols";
-            };
+            action.__raw =
+              "require('telescope.builtin').lsp_dynamic_workspace_symbols";
+            options = { desc = "LSP: [W]orkspace [S]ymbols"; };
           }
         ];
 
@@ -213,9 +200,5 @@
   };
 
   # https://nix-community.github.io/nixvim/NeovimOptions/autoGroups/index.html
-  autoGroups = {
-    "kickstart-lsp-attach" = {
-      clear = true;
-    };
-  };
+  autoGroups = { "kickstart-lsp-attach" = { clear = true; }; };
 }

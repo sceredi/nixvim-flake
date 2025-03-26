@@ -16,6 +16,10 @@
     gopls
     # nix
     nixfmt-rfc-style
+    # ocaml
+    ocamlformat
+    # zig
+    zig
   ];
 
   # Autoformat
@@ -82,6 +86,8 @@
           stop_after_first = true;
         };
         rust = [ "rustfmt" ];
+        ocaml = [ "ocamlformat" ];
+        zig = [ "zig fmt" ];
       };
     };
   };

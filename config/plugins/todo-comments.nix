@@ -1,6 +1,8 @@
 {
   plugins.todo-comments = {
     enable = true;
-    settings = { signs = true; };
+    settings = {
+      signs = true;
+    };
   };
 }

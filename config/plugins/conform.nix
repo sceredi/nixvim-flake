@@ -1,12 +1,21 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   extraPackages = with pkgs; [
-    # Used to format Lua code
+    # c-cpp
+    clang-tools
+    # lua
     stylua
-
+    # python
     isort
     black
-
+    # js/ts
     nodePackages.prettier
+    # java
+    google-java-format
+    # go
+    gopls
+    # nix
+    nixfmt-rfc-style
   ];
 
   # Autoformat
@@ -14,40 +23,82 @@
   plugins.conform-nvim = {
     enable = true;
     settings = {
-      notify_on_error = false;
+      notify_on_error = true;
+      # default_format_opts = {
+      #   lsp_format = "fallback";
+      # };
+      # format_after_save = {
+      #   lsp_format = "fallback";
+      # };
       format_on_save = ''
         function(bufnr)
-          -- Disable "format_on_save lsp_fallback" for lanuages that don't
-          -- have a well standardized coding style. You can add additional
-          -- lanuages here or re-enable it for the disabled ones.
-          local disable_filetypes = { c = true, cpp = true }
-          return {
-            timeout_ms = 500,
-            lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype]
-          }
+          -- Disable with a global or buffer-local variable
+          if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+            return
+          end
+          return { timeout_ms = 500, lsp_format = 'fallback' }
         end
       '';
       formatters_by_ft = {
+        c = [ "clang-format" ];
+        cpp = [ "clang-format" ];
+        html = {
+          __unkeyed-1 = "prettierd";
+          __unkeyed-2 = "prettier";
+          stop_after_first = true;
+        };
+        css = {
+          __unkeyed-1 = "prettierd";
+          __unkeyed-2 = "prettier";
+          stop_after_first = true;
+        };
+        javascript = {
+          __unkeyed-1 = "prettierd";
+          __unkeyed-2 = "prettier";
+          stop_after_first = true;
+        };
+        javascriptreact = {
+          __unkeyed-1 = "prettierd";
+          __unkeyed-2 = "prettier";
+          stop_after_first = true;
+        };
+        typescript = {
+          __unkeyed-1 = "prettierd";
+          __unkeyed-2 = "prettier";
+          stop_after_first = true;
+        };
+        typescriptreact = {
+          __unkeyed-1 = "prettierd";
+          __unkeyed-2 = "prettier";
+          stop_after_first = true;
+        };
+        java = [ "google-java-format" ];
+        python = [ "black" ];
         lua = [ "stylua" ];
-        # Conform can also run multiple formatters sequentially
-        python = [ "isort" "black" ];
-        #
-        # You can use a sublist to tell conform to run *until* a formatter
-        # is found
-        javascript = [[ "prettierd" "prettier" ]];
+        nix = [ "nixfmt" ];
+        markdown = {
+          __unkeyed-1 = "prettierd";
+          __unkeyed-2 = "prettier";
+          stop_after_first = true;
+        };
+        rust = [ "rustfmt" ];
       };
     };
   };
 
   # https://nix-community.github.io/nixvim/keymaps/index.html
-  keymaps = [{
-    mode = "";
-    key = "<leader>f";
-    action.__raw = ''
-      function()
-        require('conform').format { async = true, lsp_fallback = true }
-      end
-    '';
-    options = { desc = "[F]ormat buffer"; };
-  }];
+  keymaps = [
+    {
+      mode = "";
+      key = "<leader>f";
+      action.__raw = ''
+        function()
+          require('conform').format { async = true, lsp_fallback = true }
+        end
+      '';
+      options = {
+        desc = "[F]ormat buffer";
+      };
+    }
+  ];
 }

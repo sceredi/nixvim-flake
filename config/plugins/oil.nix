@@ -2,8 +2,10 @@
   plugins.oil = {
     enable = true;
     settings = {
-      keymaps = { "<C-h>" = false;
-        "<C-l>" = false; };
+      keymaps = {
+        "<C-h>" = false;
+        "<C-l>" = false;
+      };
     };
   };
   keymaps = [

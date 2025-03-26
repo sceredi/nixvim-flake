@@ -1,9 +1,17 @@
-{ ... }: {
-  imports = [ ./auto.nix ./keymaps.nix ./plugins ./performance.nix ];
+{ ... }:
+{
+  imports = [
+    ./auto.nix
+    ./keymaps.nix
+    ./plugins
+    ./performance.nix
+  ];
 
   vimAlias = true;
 
-  colorschemes.catppuccin = { enable = true; };
+  colorschemes.catppuccin = {
+    enable = true;
+  };
 
   globals = {
     # Set <space> as the leader key

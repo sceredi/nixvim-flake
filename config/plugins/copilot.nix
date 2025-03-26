@@ -8,7 +8,6 @@
       };
     };
   };
-  # 
   extraConfigLua = ''
     -- Create an autocommand that triggers once when Neovim fully starts (VimEnter event)
     vim.api.nvim_create_autocmd("VimEnter", {

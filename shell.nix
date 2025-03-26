@@ -2,18 +2,22 @@
 
 pkgs.mkShell {
   buildInputs = with pkgs; [
-    # bash
+    # Bash
     bash-language-server
+    shellcheck
 
-    # c/c++
-    clang-tools
+    # C/C++
+      clang-tools
+      cpplint
 
     # Nix
-    nixfmt
+    nixfmt-unstable # or adjust your config to use nixfmt-rfc-style if preferred
+    statix
 
     # Rust
     cargo
     rustc
+    rustfmt
 
     # Elixir
     elixir
@@ -21,8 +25,9 @@ pkgs.mkShell {
     # Go
     go
     gopls
+    golangci-lint
 
-    # scala
+    # Scala
     metals
 
     # Kotlin
@@ -30,25 +35,39 @@ pkgs.mkShell {
 
     # Java
     jdt-language-server
+    google-java-format
+    checkstyle
 
-    # python
+    # Python
     pyright
     ruff
+    isort
+    black
+    flake8
 
-    # typescript
+    # JavaScript / TypeScript
     nodePackages.typescript-language-server
-    nodePackages.eslint
+    nodePackages.eslint # may be required by other tools or language servers
+    nodePackages.eslint_d
+    nodePackages.prettierd
+    nodePackages.prettier
 
-    # lua
+    # Lua
     lua-language-server
+    stylua
+    selene
 
-    # docker
+    # Docker
     dockerfile-language-server-nodejs
 
-    # xml
+    # XML
     lemminx
 
-    # markdown
-    markdownlint-cli
+    # Haskell (if needed)
+    hlint
+
+    # JSON
+    jsonlint
   ];
 }
+

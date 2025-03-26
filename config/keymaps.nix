@@ -16,11 +16,16 @@
       mode = "t";
       key = "<Esc><Esc>";
       action = "<C-\\><C-n>";
-      options = { desc = "Exit terminal mode"; };
+      options = {
+        desc = "Exit terminal mode";
+      };
     }
 
     {
-      mode = [ "n" "v" ];
+      mode = [
+        "n"
+        "v"
+      ];
       key = "<space>";
       action = "<nop>";
     }
@@ -77,7 +82,10 @@
       lua = true;
     }
     {
-      mode = [ "n" "v" ];
+      mode = [
+        "n"
+        "v"
+      ];
       key = "<leader>y";
       action = ''[["+y]]'';
       lua = true;
@@ -89,7 +97,10 @@
       lua = true;
     }
     {
-      mode = [ "n" "v" ];
+      mode = [
+        "n"
+        "v"
+      ];
       key = "<leader>d";
       action = ''[["_d]]'';
       lua = true;
@@ -104,11 +115,12 @@
       key = "Q";
       action = "<nop>";
     }
-    {
-      mode = "n";
-      key = "<leader>f";
-      action = "<cmd>lua vim.lsp.buf.format()<CR>";
-    }
+    # {
+    #   mode = "n";
+    #   key = "<leader>f";
+    #   action = "<cmd>lua vim.lsp.buf.format()<CR>";
+    #   options = { desc = "[F]ormat buffer"; };
+    # }
     {
       mode = "n";
       key = "<C-j>";

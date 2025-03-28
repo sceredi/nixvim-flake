@@ -18,6 +18,8 @@ jobs:
         uses: DeterminateSystems/flake-checker-action@v5
 
   format-lint:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     needs:
       - build

@@ -10,7 +10,7 @@ jobs:
         uses: DanySK/action-checkout@0.2.22
 
       - name: Install Nix
-        uses: cachix/install-nix-action@v24
+        uses: cachix/install-nix-action@v30
         with:
           nix_path: nixpkgs=channel:nixos-unstable
 
@@ -29,7 +29,7 @@ jobs:
         uses: DanySK/action-checkout@0.2.22
 
       - name: Install Nix
-        uses: cachix/install-nix-action@v24
+        uses: cachix/install-nix-action@v30
         with:
           nix_path: nixpkgs=channel:nixos-unstable
 

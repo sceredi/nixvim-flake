@@ -1,6 +1,10 @@
 {
   # https://nix-community.github.io/nixvim/NeovimOptions/autoGroups/index.html
-  autoGroups = { kickstart-highlight-yank = { clear = true; }; };
+  autoGroups = {
+    kickstart-highlight-yank = {
+      clear = true;
+    };
+  };
 
   # [[ Basic Autocommands ]]
   #  See `:help lua-guide-autocommands`

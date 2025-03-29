@@ -37,7 +37,7 @@
             default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
           };
 
-          formatter = pkgs.alejandra;
+          formatter = pkgs.nixfmt-rfc-style;
 
           packages = {
             default = nvim;

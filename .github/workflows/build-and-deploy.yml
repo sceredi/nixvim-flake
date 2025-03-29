@@ -17,6 +17,9 @@ jobs:
       - name: Nix Flake Checker
         uses: DeterminateSystems/flake-checker-action@v9
 
+      - name: Check Nixvim Configuration
+        run: nix flake check .
+
   format-lint:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
@@ -34,7 +37,7 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
 
       - name: Install Nix Linting and Formatting Tools
-        run: nix-env -i statix alejandra -f '<nixpkgs>'
+        run: nix-env -i statix nixfmt-rfc-style -f '<nixpkgs>'
 
       - name: Run Statix Lint
         run: statix fix

@@ -15,7 +15,7 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
 
       - name: Nix Flake Checker
-        uses: DeterminateSystems/flake-checker-action@v5
+        uses: DeterminateSystems/flake-checker-action@v8
 
   format-lint:
     runs-on: ubuntu-latest

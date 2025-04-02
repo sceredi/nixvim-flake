@@ -2,6 +2,7 @@
   plugins.oil = {
     enable = true;
     settings = {
+      view_options.show_hidden = true;
       keymaps = {
         "<C-h>" = false;
         "<C-l>" = false;

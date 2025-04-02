@@ -96,6 +96,16 @@
 
   # https://nix-community.github.io/nixvim/keymaps/index.html
   keymaps = [
+    {
+      mode = "n";
+      key = "<leader>fh";
+      action.__raw = ''
+        function()
+          require('telescope.builtin').find_files({ hidden = true })
+        end
+      '';
+      options.desc = "[F]ind [H]idden files";
+    }
     # Slightly advanced example of overriding default behavior and theme
     {
       mode = "n";

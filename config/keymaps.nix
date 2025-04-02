@@ -31,12 +31,12 @@
     }
     {
       mode = "n";
-      key = "<A-i>";
+      key = "<M-i>";
       action = "<C-i>";
     }
     {
       mode = "n";
-      key = "<A-o>";
+      key = "<M-o>";
       action = "<C-o>";
     }
     {

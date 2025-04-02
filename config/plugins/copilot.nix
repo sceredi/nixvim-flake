@@ -3,7 +3,15 @@
     copilot-lua = {
       enable = true;
       settings = {
-        suggestion.enabled = false;
+        suggestion = {
+          enabled = true;
+          keymap = {
+            accept = "<M-l>";
+            accept_word = "<M-L>";
+            dismiss = "<C-]>";
+            next = "M-]";
+          };
+        };
         panel.enabled = false;
       };
     };

@@ -2,10 +2,6 @@
 {
   plugins = {
 
-    cmp-nvim-lsp = {
-      enable = true;
-    };
-
     fidget = {
       enable = true;
     };

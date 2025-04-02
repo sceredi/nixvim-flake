@@ -9,7 +9,7 @@
 
   vimAlias = true;
 
-  colorschemes.catppuccin = {
+  colorschemes.rose-pine = {
     enable = true;
   };
 

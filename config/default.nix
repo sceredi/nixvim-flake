@@ -86,7 +86,8 @@
     scrolloff = 10;
 
     # See `:help hlsearch`
-    hlsearch = true;
+    hlsearch = false;
+    incsearch = true;
 
     expandtab = true;
 

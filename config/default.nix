@@ -1,4 +1,28 @@
-{ ... }:
+{ lib, ... }:
+let
+  # Define the path to your ftplugins directory
+  ftpluginsDir = ./after/ftplugins;
+
+  # Function to recursively collect files from a directory
+  collectFiles =
+    dir: prefix:
+    lib.attrsets.concatMapAttrs (
+      name: type:
+      let
+        path = "${dir}/${name}";
+        relPath = "${prefix}${name}";
+      in
+      if type == "directory" then
+        collectFiles path (relPath + "/")
+      else
+        {
+          "after/ftplugin/${relPath}".source = path;
+        }
+    ) (builtins.readDir dir);
+
+  # Collect all files from the ftplugins directory
+  ftpluginFiles = collectFiles ftpluginsDir "";
+in
 {
   imports = [
     ./auto.nix
@@ -6,6 +30,8 @@
     ./plugins
     ./performance.nix
   ];
+
+  extraFiles = ftpluginFiles;
 
   vimAlias = true;
 
